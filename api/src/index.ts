@@ -6,11 +6,7 @@ import session from "express-session";
 import { createApp } from "./app";
 
 (async () => {
-  try {
-    await mongoose.connect(MONGO_URI, MONGO_OPTIONS);
-  } catch (error) {
-    console.log(error);
-  }
+  await mongoose.connect(MONGO_URI, MONGO_OPTIONS);
 
   const RedisStore = connectRedis(session);
 

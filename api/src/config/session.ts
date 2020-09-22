@@ -1,4 +1,5 @@
 import { SessionOptions } from "express-session";
+import { IN_PROD } from "./app";
 
 const ONE_HOUR = 1000 * 60 * 60;
 
@@ -15,7 +16,7 @@ export const SESSION_OPTIONS: SessionOptions = {
   name: SESSION_NAME,
   cookie: {
     maxAge: +SESSION_IDLE_TIMEOUT,
-    secure: true,
+    secure: IN_PROD,
     sameSite: true,
   },
   rolling: true,
